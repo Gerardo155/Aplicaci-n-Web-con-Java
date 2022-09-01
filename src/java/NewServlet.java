@@ -30,6 +30,14 @@ public class NewServlet extends HttpServlet {
         try ( PrintWriter out = response.getWriter()) {
             
             
+            String nombre = request.getParameter("nombre");
+             String apellido = request.getParameter("apellido");
+              String direccion = request.getParameter("direccion");
+               String correo = request.getParameter("correo");
+                String telefono = request.getParameter("telefono");
+                 String codigo = request.getParameter("codigo");
+                
+            
             alumno = new Alumno(
             
              request.getParameter("nombre"),
@@ -61,16 +69,28 @@ public class NewServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             
+              out.println("<h3>"+nombre+"</h3>"); 
+              out.println("<h3>"+apellido+"</h3>"); 
+              out.println("<h3>"+direccion+"</h3>"); 
+              out.println("<h3>"+correo+"</h3>"); 
+              out.println("<h3>"+telefono+"</h3>"); 
+              out.println("<h3>"+codigo+"</h3>"); 
+              
             out.println("<div class='container'>");      
             out.println("<br><h1>Datos del Alumno</h1><br>"); 
             out.println("<form name='nombreForm'>");
-            out.println("<div class='container-lg d-flex'> <a href='http://localhost:8090/Aplicaci_n_Web_con_Java/Formulario.html' class=\"btn btn-success ml-auto\">Registrar Nuevo</a></div><br>");
+            out.println("<div class='container-lg d-flex'> <a href='http://localhost:8090/Aplicaci_n_Web_con_Java/index.html' class=\"btn btn-success ml-auto\">Registrar Nuevo</a></div><br>");
             
             out.println("<table class=\"table table-hover table-striped\">"); 
             out.println("<thead><tr> <th scope=\"col\">NOMBRE</th> <th scope=\"col\">APELLIDO</th>\n" +
                                 "<th scope=\"col\">DIRECCION</th> <th scope=\"col\">CORREO</th>\n" +
                                 "<th scope=\"col\">TELEFONO</th> <th scope=\"col\">CODIGO</th>\n" +
                                 "<th scope=\"col\">ACCION</th> </tr></thead>");  
+            
+          
+                    
+            
+            
             out.println("<tbody>");
             
             for (int i = 0; i< alumnoRegistrado.length; i++){

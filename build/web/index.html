@@ -5,38 +5,146 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
 -->
 <html>
     <head>
-        <title>Universidad Mariano Gálvez</title>
+        <title>Formulario</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+        <script src="js/script.js" ></script>
+        
     </head>
     
-    <body background="https://lavozdexela.com/wp-content/uploads/2020/11/Universidad-mariano-Galvez.jpg">
-         
+    
+    
+    <body>
         
-        <div class="container text-center fixed-top">
+          
+          
+        <form id="contact-form" role="form">
             
-         
-       
-        <nav class="navbar fixed-top navbar-dark bg-dark">
-         
-           <form action="http://localhost:8090/Aplicaci_n_Web_con_Java/Formulario.html">
-          <button type="submit" class="btn btn-primary">Formulario</button>
+                   
+  <div class="form-group has-feedback">
         
-        </form>
+         <input type="text" class="form-control" id="nombre" placeholder="Ingrese nombre" name="nombre">
+  </div><br>
+            
+  
+            
+  <div class="form-group has-feedback">
+      
+        <input type="text" class="form-control" id="apellido" placeholder="Ingrese apellido" name="apellido">
+  </div><br>
+  
+  
+  <div class="form-group has-feedback">
         
-              <a> 
-              <img src="https://umg.edu.gt/miumg/sesion_files/logo_white.png" width="60"  height="42" alt="umg">  
-          </a>       
-             
-        </nav>
-                 
-                    
-         </div>
+         <input type="text" class="form-control" id="direccion" placeholder="Ingrese direccion" name="direccion">
+  </div><br>
+ 
+  
+  
+  <div class="form-group has-feedback">
+        
+         <input type="email" class="form-control" id="correo" placeholder="Ingrese correo" name="correo">
+  </div><br>
+  
+  
+  
+  <div class="form-group has-feedback">
+        
+         <input type="text" class="form-control" id="telefono" placeholder="Ingrese telefono" name="telefono">
+  </div><br>
+  
+  
+  
+  <div class="form-group has-feedback">
+        
+         <input type="text" class="form-control" id="codigo" placeholder="Ingrese codigo" name="codigo">
+  </div><br>
+  
+  
+    <a href="NewServlet">click aqui</a><br><br>
+
+    
+        </form><br>
         
  
+        
+        
+        <script type="text/javascript">
+            
+      function manipularElementosDelDom(){
+      
+    let alumno = new Object();
+    
+    let nombre=document.getElementById("nombre");
+    let apellido=document.getElementById("apellido");
+    let direccion=document.getElementById("direccion");
+    let correo=document.getElementById("correo");
+    let telefono=document.getElementById("telefono");
+    let codigo=document.getElementById("codigo");
+    
+    alumno.nombre=nombre.value;
+    alumno.apellido=correo.value;
+    alumno.direccion=correo.value;
+    alumno.correo=correo.value;
+    alumno.telefono=correo.value;
+    alumno.codigo=correo.value;
+    
+    console.log(alumno);
+    
+    nombre.value='';
+    apellido.value='';
+    direccion.value='';
+    correo.value='';
+    telefono.value='';
+    codigo.value='';
+    
+    }
+            
+       
+    
+        </script>
+        
+              
+          
+       <input type="button" value="Boton prueba" onclick="manipularElementosDelDom()"
+                   class="submit-button btn  btn-primary" >
+       
+  
+       
+       
+       <script type="text/javascript">
+           
+           
+           function enviarFormularioOpcion2(){
+	const XHR = new XMLHttpRequest();
+	  var formData = new FormData(document.getElementById('contact-form'));
+
+	  // Define what happens on successful data submission
+	  XHR.addEventListener('load', (event) => {
+	    alert('DATOS ENVIADOS');
+	  });
+
+	  // Define what happens in case of error
+	  XHR.addEventListener('error', (event) => {
+	    alert('ERROR EN EL ENVIO DE DATOS');
+	  });
+
+	  // Set up our request
+	  XHR.open('POST', 'http://localhost:8090/Aplicaci_n_Web_con_Java/NewServlet');
+
+	  // Send our FormData object; HTTP headers are set automatically
+	  XHR.send(formData);
+	
+}
+
+           
+       </script>
+       
+  
+       <input type="button" value="Boton servlet" onclick="enviarFormularioOpcion2()"
+                   class="submit-button btn  btn-primary" >
+       
         
     </body>
 </html>
