@@ -34,42 +34,66 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
              
             <br>
             <br> 
-        <form action="NewServlet">
+        <form id="formulario">
             
             
             
             
   <div class="form-row">
+      
+      
     <div class="form-group col-md-6">
       <label for="exampleInputName">Nombre</label>
-      <input class=" form-control" type="text" placeholder="Ingresar Nombre" name="nombre">
+      <input class=" form-control" type="text" placeholder="Ingresar Nombre" name="nombre" required>
     </div>
+      
+      
     <div class="form-group col-md-6">
       <label for="exampleInputName">Apellido</label>
-      <input type="text" class="form-control" placeholder="Ingresar Apellido" name="apellido">
+      <input type="text" class="form-control" placeholder="Ingresar Apellido" name="apellido" required>
     </div>
+      
+      
   </div>
+            
+            
   <div class="form-group">
     <label for="inputAddress">Direccion</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="Ingrese direccion" name="direccion">
+    <input type="text" class="form-control" id="inputAddress" placeholder="Ingrese direccion" name="direccion" required>
   </div>
+            
+            
   <div class="form-group">
    <label for="exampleInputEmail1">Correo</label>
-   <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="correo">
+   <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="correo" required>
    <small id="emailHelp" class="form-text text-muted-dark">Ingrese su correo electronico.</small>
     </div>
+            
+            
   <div class="form-row">
+      
     <div class="form-group col-md-6">
       <label for="ExampleInputName">Telefono</label>
-      <input type="text" class="form-control" placeholder="Ingrese telefono" name="telefono">
+      <input type="text" class="form-control" placeholder="Ingrese telefono" name="telefono" required>
     </div>
+      
     <div class="form-group col-md-2">
       <label for="inputZip">Codigo</label>
-      <input type="text" class="form-control" id="inputZip" placeholder="Ingrese codigo" name="codigo">
+      <input type="text" class="form-control" id="inputZip" placeholder="Ingrese codigo" name="codigo" required>
     </div>
+      
   </div>
   
+ <!--
   <button type="submit" class="btn btn-primary">Enviar</button>
+  -->
+  
+   <div class="form-group has-feedback">          
+            <input type="button" value="Enviar Opcion 2" onclick="enviarFormularioOpcion2();"
+                   class="sumit-button btn  btn-primary" >
+            
+   </div>
+  
 </form>
         
    </div>
