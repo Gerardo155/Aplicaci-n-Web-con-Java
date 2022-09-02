@@ -9,7 +9,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <script src="js/script.js" ></script>
         
     </head>
     
@@ -62,7 +61,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
   </div><br>
   
   
-    <a href="NewServlet">click aqui</a><br><br>
+    <a href="NewServlet">Ver Servlet</a><br><br>
 
     
         </form><br>
@@ -76,6 +75,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
       
     let alumno = new Object();
     
+    
+    
     let nombre=document.getElementById("nombre");
     let apellido=document.getElementById("apellido");
     let direccion=document.getElementById("direccion");
@@ -83,14 +84,21 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
     let telefono=document.getElementById("telefono");
     let codigo=document.getElementById("codigo");
     
+    
+    
     alumno.nombre=nombre.value;
-    alumno.apellido=correo.value;
-    alumno.direccion=correo.value;
+    alumno.apellido=apellido.value;
+    alumno.direccion=direccion.value;
     alumno.correo=correo.value;
-    alumno.telefono=correo.value;
+    alumno.telefono=telefono.value;
     alumno.codigo=correo.value;
     
+    
     console.log(alumno);
+    
+     enviarFormularioOpcion2(alumno);
+   
+    
     
     nombre.value='';
     apellido.value='';
@@ -98,6 +106,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
     correo.value='';
     telefono.value='';
     codigo.value='';
+    
+    
+   
+    
+    
+    
     
     }
             
@@ -107,13 +121,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         
               
           
-       <input type="button" value="Boton prueba" onclick="manipularElementosDelDom()"
+       <input type="button" value="Mostrar y enviar" onclick="manipularElementosDelDom()"
                    class="submit-button btn  btn-primary" >
        
   
        
        
-       <script type="text/javascript">
+     <script type="text/javascript">
            
            
            function enviarFormularioOpcion2(){
@@ -131,7 +145,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
 	  });
 
 	  // Set up our request
-	  XHR.open('POST', 'http://localhost:8090/Aplicaci_n_Web_con_Java/NewServlet');
+	  XHR.open('POST', 'NewServlet');
 
 	  // Send our FormData object; HTTP headers are set automatically
 	  XHR.send(formData);
@@ -142,7 +156,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
        </script>
        
   
-       <input type="button" value="Boton servlet" onclick="enviarFormularioOpcion2()"
+       <input type="button" value="Enviar" onclick="enviarFormularioOpcion2()"
                    class="submit-button btn  btn-primary" >
        
         
