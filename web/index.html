@@ -9,6 +9,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
+        <script src="js/script.js" type="text/javascript"></script>
         
     </head>
     
@@ -18,7 +19,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         
           
           
-        <form id="contact-form" role="form">
+        <form action="NewServlet" id="contact-form" role="form">
             
                    
   <div class="form-group has-feedback">
@@ -68,92 +69,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         
  
         
-        
-        <script type="text/javascript">
-            
-      function manipularElementosDelDom(){
       
-    let alumno = new Object();
-    
-    
-    
-    let nombre=document.getElementById("nombre");
-    let apellido=document.getElementById("apellido");
-    let direccion=document.getElementById("direccion");
-    let correo=document.getElementById("correo");
-    let telefono=document.getElementById("telefono");
-    let codigo=document.getElementById("codigo");
-    
-    
-    
-    alumno.nombre=nombre.value;
-    alumno.apellido=apellido.value;
-    alumno.direccion=direccion.value;
-    alumno.correo=correo.value;
-    alumno.telefono=telefono.value;
-    alumno.codigo=correo.value;
-    
-    
-    console.log(alumno);
-    
-     enviarFormularioOpcion2(alumno);
-   
-    
-    
-    nombre.value='';
-    apellido.value='';
-    direccion.value='';
-    correo.value='';
-    telefono.value='';
-    codigo.value='';
-    
-    
-   
-    
-    
-    
-    
-    }
-            
-       
-    
-        </script>
-        
               
           
        <input type="button" value="Mostrar y enviar" onclick="manipularElementosDelDom()"
                    class="submit-button btn  btn-primary" >
        
   
-       
-       
-     <script type="text/javascript">
-           
-           
-           function enviarFormularioOpcion2(){
-	const XHR = new XMLHttpRequest();
-	  var formData = new FormData(document.getElementById('contact-form'));
-
-	  // Define what happens on successful data submission
-	  XHR.addEventListener('load', (event) => {
-	    alert('DATOS ENVIADOS');
-	  });
-
-	  // Define what happens in case of error
-	  XHR.addEventListener('error', (event) => {
-	    alert('ERROR EN EL ENVIO DE DATOS');
-	  });
-
-	  // Set up our request
-	  XHR.open('POST', 'NewServlet');
-
-	  // Send our FormData object; HTTP headers are set automatically
-	  XHR.send(formData);
-	
-}
-
-           
-       </script>
        
   
        <input type="button" value="Enviar" onclick="enviarFormularioOpcion2()"
