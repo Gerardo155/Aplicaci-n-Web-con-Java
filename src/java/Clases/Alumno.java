@@ -16,7 +16,7 @@ public class Alumno {
     private String Correo;
     private String Telefono;
     private String Codigo;
-    
+
     
     
     
@@ -29,10 +29,11 @@ public class Alumno {
        this.Correo=correo;
        this.Telefono=telefono;
        this.Codigo=codigo; 
-      
-      
+               
    } 
 
+  
+ 
     public String getNombre() {
         return Nombre;
     }
@@ -80,7 +81,6 @@ public class Alumno {
     public void setCodigo(String Codigo) {
         this.Codigo = Codigo;
     }
-    
-    
+      
     
 }
